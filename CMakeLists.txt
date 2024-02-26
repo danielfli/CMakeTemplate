@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(devenv)
+project(devenv 0.0.0 "CMake Template")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

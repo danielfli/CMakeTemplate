@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.25)
-project(devenv 0.0.0 "CMake Template")
+project(devenv VERSION 0.0.0  DESCRIPTION "CMake Template")
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -Werror")
 
 add_subdirectory(app)
+
 
 message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
 # copy files to target

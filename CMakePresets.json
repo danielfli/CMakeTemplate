@@ -45,17 +45,17 @@
             "installDir": "${sourceDir}/build/${presetName}/install",
             "toolchainFile": "${sourceDir}/cmake/crossarmv6l.cmake",
             "cacheVariables": {
-              "RASPBERRY_VERSION": "1",
-              "CMAKE_BUILD_TYPE": "Debug",
-              "IPTARGET": "192.168.2.145",
-              "USER": "root"
+                "RASPBERRY_VERSION": "1",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "IPTARGET": "192.168.2.145",
+                "USER": "root"
             },
             "condition": {
-              "type": "equals",
-              "lhs": "${hostSystemName}",
-              "rhs": "Linux"
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
             }
-          },
+        },
         {
             "name": "cross-raspi5-debug",
             "displayName": "cross-raspi5-debug",
@@ -87,7 +87,7 @@
                 "CMAKE_BUILD_TYPE": "Debug",
                 "TARGET_IP_ADRESSE": "192.168.2.161"
             }
-          }
+        }
     ],
     "buildPresets": [
         {

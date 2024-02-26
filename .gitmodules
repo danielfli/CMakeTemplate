@@ -1,3 +1,3 @@
-[submodule "DockerCrossDevEnv"]
-	path = DockerCrossDevEnv
+[submodule "submodules/DockerCrossDevEnv"]
+	path = submodules/DockerCrossDevEnv
 	url = https://github.com/danielfli/DockerCrossDevEnv.git

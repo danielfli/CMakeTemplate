@@ -1,0 +1,100 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "base",
+            "description": "For more information: http://aka.ms/cmakepresetsvs",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "/usr/local",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_CXX_STANDARD_REQUIRED": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_C_COMPILER": "/usr/bin/gcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        },
+        {
+            "name": "debug",
+            "displayName": "linux-debug",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "linux-release",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "cross-zero-debug",
+            "displayName": "linux-cross-zero",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/build/${presetName}/install",
+            "toolchainFile": "${sourceDir}/cmake/crossarmv6l.cmake",
+            "cacheVariables": {
+              "RASPBERRY_VERSION": "1",
+              "CMAKE_BUILD_TYPE": "Debug",
+              "IPTARGET": "192.168.2.145",
+              "USER": "root"
+            },
+            "condition": {
+              "type": "equals",
+              "lhs": "${hostSystemName}",
+              "rhs": "Linux"
+            }
+          },
+        {
+            "name": "cross-raspi5-debug",
+            "displayName": "cross-raspi5-debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/build/${presetName}/install",
+            "toolchainFile": "${sourceDir}/cmake/crossraspi_5-64.cmake",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "CROSS_BUILDING": true,
+                "CMAKE_CXX_STANDARD_REQUIRED": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_BUILD_TYPE": "Debug",
+                "TARGET_IP_ADRESSE": "192.168.2.161"
+            }
+        },
+        {
+            "name": "cross-raspi4-debug",
+            "displayName": "cross-raspi4-debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/build/${presetName}/install",
+            "toolchainFile": "${sourceDir}/cmake/crossraspi_4-64.cmake",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "CROSS_BUILDING": true,
+                "CMAKE_CXX_STANDARD_REQUIRED": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_BUILD_TYPE": "Debug",
+                "TARGET_IP_ADRESSE": "192.168.2.161"
+            }
+          }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-linux-debug",
+            "description": "Test",
+            "displayName": "",
+            "configurePreset": "debug"
+        }
+    ]
+}

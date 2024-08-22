@@ -3,8 +3,10 @@
 Just execute the following commands for setup the project:
 
 ```bash
-git submodule update 
+git submodule update --init
 ```
+
+Check that .devcontainer Directory is cloned as submodule 
 
 ## Submodule DockerCrossDevEnv
 
